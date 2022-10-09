@@ -18,9 +18,19 @@
 
       <accordion header="Degree" />
 
-      <job-filters-sidebar-job-types />
+      <job-filters-sidebar-checkbox-group
+        header="Job Types"
+        :unique-values="uniqueJobTypes"
+        :mutation="ADD_SELECTED_JOB_TYPES"
+      />
+      <job-filters-sidebar-checkbox-group
+        header="Organizations"
+        :unique-values="uniqueOrganizations"
+        :mutation="ADD_SELECTED_ORGANIZATIONS"
+      />
+      <!-- <job-filters-sidebar-job-types />
 
-      <job-filters-sidebar-organizations />
+      <job-filters-sidebar-organizations /> -->
     </section>
   </div>
 </template>
@@ -28,16 +38,32 @@
 <script>
 import ActionButton from "@/components/shared/ActionButton.vue";
 import Accordion from "@/components/shared/Accordion.vue";
-import JobFiltersSidebarOrganizations from "@/components/job-results/job-filters-sidebar/JobFiltersSidebarOrganizations.vue"
-import JobFiltersSidebarJobTypes from "@/components/job-results/job-filters-sidebar/JobFiltersSidebarJobTypes.vue"
+// import JobFiltersSidebarOrganizations from "@/components/job-results/job-filters-sidebar/JobFiltersSidebarOrganizations.vue"
+// import JobFiltersSidebarJobTypes from "@/components/job-results/job-filters-sidebar/JobFiltersSidebarJobTypes.vue"
+import JobFiltersSidebarCheckboxGroup from "@/components/job-results/job-filters-sidebar/JobFiltersSidebarCheckboxGroup.vue"
+
+import { useUniqueJobTypes, useUniqueOrganizations } from "@/store/composables";
+import { ADD_SELECTED_ORGANIZATIONS, ADD_SELECTED_JOB_TYPES } from "@/store/constants"; //
 
 export default {
 	name: "JobFiltersSidebar",
 	components: {
 		ActionButton,
 		Accordion,
-    JobFiltersSidebarOrganizations,
-    JobFiltersSidebarJobTypes
+    // JobFiltersSidebarOrganizations,
+    // JobFiltersSidebarJobTypes,
+    JobFiltersSidebarCheckboxGroup
 	},
+  setup() {
+    const uniqueJobTypes = useUniqueJobTypes();
+    const uniqueOrganizations = useUniqueOrganizations();
+
+    return {
+      uniqueJobTypes,
+      uniqueOrganizations,
+      ADD_SELECTED_ORGANIZATIONS,
+      ADD_SELECTED_JOB_TYPES
+    }
+  }
 };
 </script>

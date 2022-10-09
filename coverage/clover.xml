@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665081729276" clover="3.2.0">
-  <project timestamp="1665081729276" name="All files">
-    <metrics statements="52" coveredstatements="52" conditionals="4" coveredconditionals="4" methods="22" coveredmethods="22" elements="78" coveredelements="78" complexity="0" loc="52" ncloc="52" packages="6" files="11" classes="11"/>
+<coverage generated="1665338601687" clover="3.2.0">
+  <project timestamp="1665338601687" name="All files">
+    <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="30" coveredmethods="30" elements="98" coveredelements="98" complexity="0" loc="64" ncloc="64" packages="7" files="13" classes="13"/>
     <package name="api">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="getJobs.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/api/getJobs.js">
@@ -40,13 +40,34 @@
         <line num="34" count="5" type="stmt"/>
       </file>
     </package>
+    <package name="composables">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="useConfirmRoute.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/composables/useConfirmRoute.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="store">
-      <metrics statements="36" coveredstatements="36" conditionals="4" coveredconditionals="4" methods="17" coveredmethods="17"/>
+      <metrics statements="45" coveredstatements="45" conditionals="4" coveredconditionals="4" methods="23" coveredmethods="23"/>
       <file name="actions.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/actions.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="composables.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/composables.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
       </file>
       <file name="constants.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/constants.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
