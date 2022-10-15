@@ -5,7 +5,10 @@ import {
   FILTERED_JOBS,
   UNIQUE_JOB_TYPES,
   UNIQUE_ORGANIZATIONS,
+  FETCH_JOBS
 } from '@/store/constants';
+
+/* Getters */
 
 export const useFilteredJobs = () => {
   const store = useStore();
@@ -21,3 +24,10 @@ export const useUniqueOrganizations = () => {
   const store = useStore();
   return computed(() => store.getters[UNIQUE_ORGANIZATIONS]);
 };
+
+/* Actions */
+
+export const useFetchJobDispatch = () => {
+  const store = useStore();
+  return store.dispatch(FETCH_JOBS);
+}
