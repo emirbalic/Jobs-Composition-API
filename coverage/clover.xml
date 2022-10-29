@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665508613861" clover="3.2.0">
-  <project timestamp="1665508613862" name="All files">
-    <metrics statements="79" coveredstatements="79" conditionals="10" coveredconditionals="10" methods="36" coveredmethods="36" elements="125" coveredelements="125" complexity="0" loc="79" ncloc="79" packages="7" files="15" classes="15"/>
-    <package name="api">
+<coverage generated="1666212271006" clover="3.2.0">
+  <project timestamp="1666212271006" name="All files">
+    <metrics statements="93" coveredstatements="93" conditionals="10" coveredconditionals="9" methods="37" coveredmethods="37" elements="140" coveredelements="139" complexity="0" loc="93" ncloc="93" packages="7" files="15" classes="15"/>
+    <package name="src.api">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="getJobs.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/api/getJobs.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -12,15 +12,7 @@
         <line num="6" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="components.job-results">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="JobListing.vue" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/components/job-results/JobListing.vue">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="49" count="2" type="stmt"/>
-        <line num="59" count="5" type="stmt"/>
-      </file>
-    </package>
-    <package name="components.navigation">
+    <package name="src.components.navigation">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="ProfileImage.vue" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/components/navigation/ProfileImage.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -28,7 +20,7 @@
         <line num="13" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="components.shared">
+    <package name="src.components.shared">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="HeaderContainer.vue" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/components/shared/HeaderContainer.vue">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -40,7 +32,7 @@
         <line num="34" count="5" type="stmt"/>
       </file>
     </package>
-    <package name="composables">
+    <package name="src.composables">
       <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
       <file name="useConfirmRoute.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/composables/useConfirmRoute.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -67,30 +59,36 @@
         <line num="15" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="store">
-      <metrics statements="48" coveredstatements="48" conditionals="4" coveredconditionals="4" methods="24" coveredmethods="24"/>
-      <file name="actions.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/actions.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+    <package name="src.store">
+      <metrics statements="59" coveredstatements="59" conditionals="2" coveredconditionals="2" methods="24" coveredmethods="24"/>
+      <file name="actions.ts" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/actions.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="composables.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/composables.js">
-        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+      <file name="composables.ts" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/composables.ts">
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
         <line num="30" count="4" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
       </file>
-      <file name="constants.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/constants.js">
+      <file name="constants.ts" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/constants.ts">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="7" type="stmt"/>
         <line num="5" count="7" type="stmt"/>
@@ -103,40 +101,45 @@
         <line num="16" count="7" type="stmt"/>
         <line num="17" count="7" type="stmt"/>
       </file>
-      <file name="getters.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/getters.js">
-        <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="11"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="cond" truecount="2" falsecount="0"/>
+      <file name="getters.ts" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/getters.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="11"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
       </file>
-      <file name="mutations.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/mutations.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+      <file name="mutations.ts" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/mutations.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
       </file>
-      <file name="state.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/state.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
+      <file name="state.ts" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/store/state.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="15" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="utils">
+    <package name="src.utils">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="nextElementInList.js" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/src/utils/nextElementInList.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -145,6 +148,17 @@
         <line num="4" count="5" type="stmt"/>
         <line num="5" count="5" type="stmt"/>
         <line num="6" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="tests.unit.store">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="utils.ts" path="/Users/emirbalic/Documents/VueJS/Vue Boris/job-search composition api/tests/unit/store/utils.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="5" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="7" count="11" type="stmt"/>
+        <line num="10" count="13" type="cond" truecount="1" falsecount="0"/>
       </file>
     </package>
   </project>

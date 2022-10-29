@@ -1,84 +1,75 @@
 <template>
-	<main class="flex-auto p-8 bg-brand-gray-2">
-		<ol>
-			<job-listing
-				v-for="job in displayedJobs"
-				:key="job.id"
-				:job="job"
-				data-test="job-listing"
-			/>
-		</ol>
+  <main class="flex-auto p-8 bg-brand-gray-2">
+    <ol>
+      <job-listing
+        v-for="job in displayedJobs"
+        :key="job.id"
+        :job="job"
+        data-test="job-listing"
+      />
+    </ol>
 
-		<div class="mt-8 mx-auto">
-			<div class="flex flex-row flex-nowrap">
-				<p class="text-sm flex-grow">Page {{ currentPage }}</p>
+    <div class="mt-8 mx-auto">
+      <div class="flex flex-row flex-nowrap">
+        <p class="text-sm flex-grow">Page {{ currentPage }}</p>
 
-				<div class="flex items-center justify-center">
-					<router-link
-						v-if="previousPage"
-						:to="{ name: 'job-results', query: { page: previousPage } }"
-						class="mx-3 text-sm font-semibold text-brand-blue-1"
-						data-test="previous-page-link"
-						>Previous</router-link
-					>
+        <div class="flex items-center justify-center">
+          <router-link
+            v-if="previousPage"
+            :to="{ name: 'JobResults', query: { page: previousPage } }"
+            class="mx-3 text-sm font-semibold text-brand-blue-1"
+            data-test="previous-page-link"
+            >Previous</router-link
+          >
 
-					<router-link
-						v-if="nextPage"
-						:to="{ name: 'job-results', query: { page: nextPage } }"
-						class="mx-3 text-sm font-semibold text-brand-blue-1"
-						data-test="next-page-link"
-						>Next</router-link
-					>
-				</div>
-			</div>
-		</div>
-	</main>
+          <router-link
+            v-if="nextPage"
+            :to="{ name: 'JobResults', query: { page: nextPage } }"
+            class="mx-3 text-sm font-semibold text-brand-blue-1"
+            data-test="next-page-link"
+            >Next</router-link
+          >
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
 import { computed, onMounted } from "vue";
 
-
 import useCurrentPage from "@/composables/useCurrentPage";
 import usePreviousAndNextPages from "@/composables/usePreviousAndNextPages";
-
-import { useFilteredJobs, useFetchJobDispatch } from "@/store/composables";
+import { useFilteredJobs, useFetchJobsDispatch } from "@/store/composables";
 
 import JobListing from "@/components/job-results/JobListing.vue";
 
 export default {
-	name: "JobListings",
-	components: {
-		JobListing,
-	},
+  name: "JobListings",
+  components: {
+    JobListing,
+  },
+  setup() {
+    onMounted(useFetchJobsDispatch);
 
-	setup() {
-		onMounted(useFetchJobDispatch);
+    const filteredJobs = useFilteredJobs();
 
-		const filteredJobs = useFilteredJobs();
+    const currentPage = useCurrentPage();
 
-		const currentPage = useCurrentPage();
-
-		const maxPage = computed(() => Math.ceil(filteredJobs.value.length / 10));
-
-		const { previousPage, nextPage } = usePreviousAndNextPages(
+    const maxPage = computed(() => Math.ceil(filteredJobs.value.length / 10));
+    const { previousPage, nextPage } = usePreviousAndNextPages(
       currentPage,
       maxPage
     );
 
-		const displayedJobs = computed(() => {
-			const pageNumber = currentPage.value;
-			const firstJobIndex = (pageNumber - 1) * 10;
-			const lastJobIndex = pageNumber * 10;
-			return filteredJobs.value.slice(firstJobIndex, lastJobIndex);
-		});
+    const displayedJobs = computed(() => {
+      const pageNumber = currentPage.value;
+      const firstJobIndex = (pageNumber - 1) * 10;
+      const lastJobIndex = pageNumber * 10;
+      return filteredJobs.value.slice(firstJobIndex, lastJobIndex);
+    });
 
-		return {
-			currentPage,
-			previousPage,
-			nextPage,
-			displayedJobs,
-		};
-	},
+    return { displayedJobs, previousPage, currentPage, nextPage };
+  },
 };
 </script>

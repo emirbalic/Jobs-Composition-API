@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { shallowMount, flushPromises, RouterLinkStub } from '@vue/test-utils';
 
-import { useFilteredJobs, useFetchJobDispatch } from '@/store/composables';
+import { useFilteredJobs, useFetchJobsDispatch } from '@/store/composables';
 jest.mock('@/store/composables');
 
 import useCurrentPage from '@/composables/useCurrentPage';
@@ -32,7 +32,7 @@ describe('JobListings', () => {
         nextPage: 3,
       });
       shallowMount(JobListings, createConfig());
-      expect(useFetchJobDispatch).toHaveBeenCalled();
+      expect(useFetchJobsDispatch).toHaveBeenCalled();
     });
   });
 
@@ -52,7 +52,7 @@ describe('JobListings', () => {
     expect(jobListings).toHaveLength(10);
   });
 
-    fit('displays page number', () => {
+    it('displays page number', () => {
       useFilteredJobs.mockReturnValue({
         value: [],
       });
