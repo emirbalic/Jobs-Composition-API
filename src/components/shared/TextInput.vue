@@ -8,8 +8,9 @@
     >
 </template>
 
-<script>
-  export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+  export default defineComponent({
     name: "TextInput",
     props: {
       placeholder: {
@@ -23,16 +24,12 @@
       }
     },
     emits: ["update:modelValue"],
-    // data() {
-    //   return {
-    //     value: '',
-    //   }
-    // },
+
     methods: {
-      handleInput($event) {
-        // this.value = $event.target.value;
-        this.$emit('update:modelValue', $event.target.value);
+      handleInput($event: Event) {
+        const target = $event.target as HTMLInputElement
+        this.$emit('update:modelValue', target.value);
       },
     },
-  }
+  })
 </script>

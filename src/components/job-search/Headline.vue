@@ -14,20 +14,28 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
+  import { defineComponent } from 'vue';
   import nextElementInList from '@/utils/nextElementInList';
 
-  export default {
+  interface ActionClasses {
+    [x: string]: boolean
+  }
+  interface Data {
+    action: string,
+    interval?: number
+  }
+
+  export default defineComponent({
     name: 'Headline',
-    data() {
+    data(): Data {
       return {
         action: "Build",
-        actions: ['Build', 'Create', 'Design', 'Code'],
-        interval: null,
+        interval: undefined,
       }
     },
     computed:{
-      actionClasses(){
+      actionClasses(): ActionClasses{
         return {
           [this.action.toLowerCase()]: true 
         };
@@ -42,13 +50,13 @@
     methods: {
       changeTitle(){
         this.interval = setInterval(()=> {
-          // const actions = ['Build', 'Create', 'Design', 'Code'];
+          const actions = ['Build', 'Create', 'Design', 'Code'];
           
-          this.action = nextElementInList(this.actions, this.action);
+          this.action = nextElementInList(actions, this.action);
         }, 3000)
       }
     }
-  }
+  })
 </script>
 
 <style scoped>

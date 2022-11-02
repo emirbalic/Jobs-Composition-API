@@ -5,7 +5,7 @@ import Headline from '@/components/job-search/Headline.vue';
 //    jest.useFakeTimers("legacy");
 
 describe('Headline', () => {
-  describe('displays the introducory action verb', () => {
+  describe('displays the introductory action verb', () => {
 
     beforeEach(()=> {
       jest.useFakeTimers("legacy");

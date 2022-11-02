@@ -1,8 +1,13 @@
 import { shallowMount, RouterLinkStub } from "@vue/test-utils";
+import { GlobalState } from '@/store/types';
 import MainNav from "@/components/navigation/MainNav.vue";
 
+interface MockStore {
+  state: Partial<GlobalState>;
+}
+
 describe("MainNav", () => {
-  const createConfig = ($store) => ({
+  const createConfig = ($store: MockStore) => ({
     global: {
       mocks: {
         $store,
@@ -16,7 +21,7 @@ describe("MainNav", () => {
   it("displays company name", () => {
     const $store = {
       state: {
-        isLoggedin: false,
+        isLoggedIn: false,
       },
     };
     const wrapper = shallowMount(MainNav, createConfig($store));
@@ -26,7 +31,7 @@ describe("MainNav", () => {
   it("displays menu items for navigation", () => {
     const $store = {
       state: {
-        isLoggedin: false,
+        isLoggedIn: false,
       },
     };
     const wrapper = shallowMount(MainNav, createConfig($store));
@@ -47,7 +52,7 @@ describe("MainNav", () => {
     it("prompts user to sign in", () => {
       const $store = {
         state: {
-          isLoggedin: false,
+          isLoggedIn: false,
         },
       };
       const wrapper = shallowMount(MainNav, createConfig($store));
@@ -58,7 +63,7 @@ describe("MainNav", () => {
       const commit = jest.fn();
       const $store = {
         state: {
-          isLoggedin: false,
+          isLoggedIn: false,
         },
         commit,
       };
@@ -75,22 +80,22 @@ describe("MainNav", () => {
     it("displays user profile picture", () => {
       const $store = {
         state: {
-          isLoggedin: true,
+          isLoggedIn: true,
         },
       };
       const wrapper = shallowMount(MainNav, createConfig($store));
       const profileImage = wrapper.find("[data-test='profile-image']");
-      expect(profileImage.exists()).toBe(false);
+      expect(profileImage.exists()).toBe(true);
     });
     it("displays subnavigation menu with additional information", () => {
       const $store = {
         state: {
-          isLoggedin: true,
+          isLoggedIn: true,
         },
       };
       const wrapper = shallowMount(MainNav, createConfig($store));
       const subnav = wrapper.find("[data-test='subnav']");
-      expect(subnav.exists()).toBe(false);
+      expect(subnav.exists()).toBe(true);
     });
   });
 });
